@@ -4,6 +4,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import typescript from 'rollup-plugin-typescript2';
+import html from '@rollup/plugin-html';
+import copy from 'rollup-plugin-copy';
 
 export default {
 
@@ -25,6 +27,18 @@ export default {
   },
 
   plugins: [
+
+    // HTML
+    html({
+      fileName: 'index.html',
+    }),
+
+    // COPY
+    copy({
+      targets: [
+        { src: 'src/assets/**', dest: 'dist/assets' },
+      ],
+    }),
 
     //  Toggle the booleans here to enable / disable Phaser 3 features:
     replace({

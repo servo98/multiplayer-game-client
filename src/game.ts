@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'phaser';
 
 export default class Demo extends Phaser.Scene {
@@ -6,14 +5,15 @@ export default class Demo extends Phaser.Scene {
     super('demo');
   }
 
-  preload() {
+  preload(): void {
     this.load.image('logo', 'assets/phaser3-logo.png');
     this.load.image('libs', 'assets/libs.png');
     this.load.glsl('bundle', 'assets/plasma-bundle.glsl.js');
     this.load.glsl('stars', 'assets/starfields.glsl.js');
+ 
   }
 
-  create() {
+  create():void  {
     this.add.shader('RGB Shift Field', 0, 0, 800, 600).setOrigin(0);
 
     this.add.shader('Plasma', 0, 412, 800, 172).setOrigin(0);
@@ -41,5 +41,4 @@ const config = {
   scene: Demo,
 };
 
-// eslint-disable-next-line no-unused-vars
-const game = new Phaser.Game(config);
+new Phaser.Game(config);

@@ -1,5 +1,4 @@
-import CONSTANTS from '../utils/constants';
-
+import { CONSTANTS } from '#utils';
 export default class extends Phaser.Scene {
   constructor() {
     super({

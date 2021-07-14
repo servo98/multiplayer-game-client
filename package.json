@@ -5,7 +5,7 @@
     "main": "src/game.ts",
     "scripts": {
         "dev": "rollup --config rollup.config.dev.js",
-        "build": "npm run lint && rm -rf ./dist; rollup --config rollup.config.dist.js && http-server ./dist -o",
+        "build": "npm run lint && rm -rf ./dist & npx rollup --config rollup.config.dist.js && npx http-server ./dist -o",
         "watch": "rollup --watch --config rollup.config.dev.js",
         "lint": "eslint . --ext .ts"
     },

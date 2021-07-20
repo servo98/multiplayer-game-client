@@ -6,7 +6,7 @@ import serve from 'rollup-plugin-serve';
 import typescript from 'rollup-plugin-typescript2';
 import html from '@rollup/plugin-html';
 import copy from 'rollup-plugin-copy';
-import alias from '@rollup/plugin-alias';
+// import alias from '@rollup/plugin-alias';
 
 export default {
 
@@ -32,15 +32,18 @@ export default {
   plugins: [
 
     // ALIASES
-    alias({
-      entries: [
-        { find: '#utils', replacement: './src/utils' },
-        { find: '#scenes', replacement: './src/scenes' },
-      ],
-    }),
+    // alias({
+    //   entries: [
+    //     { find: '#utils', replacement: './src/utils' },
+    //     { find: '#scenes', replacement: './src/scenes' },
+    //   ],
+    // }),
 
     // HTML
-    html(),
+    html({
+      fileName: 'index.html',
+      title: 'DEVJuego'
+    }),
 
     // COPY
     copy({

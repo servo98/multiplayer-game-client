@@ -31,6 +31,7 @@ export default {
     // HTML
     html({
       fileName: 'index.html',
+      title: 'MASTERJuego'
     }),
 
     // COPY
